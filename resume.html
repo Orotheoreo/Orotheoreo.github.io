@@ -8,6 +8,11 @@
       <link href="css/stylesheet.css" rel="stylesheet /">
       <meta name="viewport" content="width=device-width, initial-scale=1">
       <link rel="icon" href="images/logo.png" type="image/png">
+      <script>
+      function changeImage(id, newSrc) {
+         document.getElementById(id).src = newSrc;
+      }
+   </script>
    </head>
 
    <a id="top"></a>
@@ -15,6 +20,12 @@
       <header class="Resume">
         <nav class="navbar">
           <a href="index.html"><img src="images/logo.png" class="nav-logo"></a>
+          <a href="https://www.linkedin.com/in/andrea-orofino-4ab0bb198/" class="linkedin-link">
+ <img src="images/linkedin-icon.png" class="linkedin-icon" id="linkedin-icon" onmouseover="changeImage('linkedin-icon', 'images/linkedin-icon2.png')" onmouseout="changeImage('linkedin-icon', 'images/linkedin-icon.png')">
+</a>
+<a href="https://github.com/Orotheoreo" class="github-link">
+ <img src="images/github-icon.png" class="github-icon" id="github-icon" onmouseover="changeImage('github-icon', 'images/github-icon2.png')" onmouseout="changeImage('github-icon', 'images/github-icon.png')">
+</a>
 
 
             <ul class="nav-menu">

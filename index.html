@@ -7,6 +7,12 @@
    <link href="css/normalize.css" rel="stylesheet">
    <link href="css/stylesheet.css" rel="stylesheet">
    <link rel="icon" href="images/logo.png" type="image/png">
+   <script>
+   function changeImage(id, newSrc) {
+      document.getElementById(id).src = newSrc;
+   }
+</script>
+
 
 </head>
 <body>
@@ -15,6 +21,16 @@
       <header class="Welcome to My portfolio">
          <nav class="navbar">
             <a href="index.html"><img src="images/logo.png" class="nav-logo"></a>
+            <a href="https://www.linkedin.com/in/andrea-orofino-4ab0bb198/" class="linkedin-link">
+   <img src="images/linkedin-icon.png" class="linkedin-icon" id="linkedin-icon" onmouseover="changeImage('linkedin-icon', 'images/linkedin-icon2.png')" onmouseout="changeImage('linkedin-icon', 'images/linkedin-icon.png')">
+</a>
+<a href="https://github.com/Orotheoreo" class="github-link">
+   <img src="images/github-icon.png" class="github-icon" id="github-icon" onmouseover="changeImage('github-icon', 'images/github-icon2.png')" onmouseout="changeImage('github-icon', 'images/github-icon.png')">
+</a>
+
+
+
+
 
             <ul class="nav-menu">
                <li class="nav-item">
@@ -49,7 +65,7 @@
             <p>Right now, I'm searching for an industry placement opportunity that can help me take my passion to the next step. I'm eager to learn and work on projects that actually matter to people. I would love to get in contact with professionals who are just as excited about assistive tech as I am and contribute to making a positive impact in this field.</p>
          </div>
          <div class="right-content">
-            <img src="your-image.jpg">
+            <img src="images/me.png">
          </div>
       </div>
    </div>
