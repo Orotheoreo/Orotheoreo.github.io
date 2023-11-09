@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online portfolio - Andrea Orofino</title>
+    <link href="css/normalize.css" rel="stylesheet">
+    <link href="css/stylesheet.css" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" href="images/logo.png" type="image/png">
+    <script>
+      function changeImage(id, newSrc) {
+        document.getElementById(id).src = newSrc;
+      }
+    </script>
+  </head>
+  <body><a id="top"></a>
+    <div id="wrapper">
+      <header class="Projects">
+        <nav class="navbar"><a href="index.html"><img src="images/logo.png" class="nav-logo"></a><a href="https://www.linkedin.com/in/andrea-orofino-4ab0bb198/" class="linkedin-link"><img src="images/linkedin-icon.png" class="linkedin-icon" id="linkedin-icon" onmouseover="changeImage('linkedin-icon', 'images/linkedin-icon2.png')" onmouseout="changeImage('linkedin-icon', 'images/linkedin-icon.png')"></a><a href="https://github.com/Orotheoreo" class="github-link"><img src="images/github-icon.png" class="github-icon" id="github-icon" onmouseover="changeImage('github-icon', 'images/github-icon2.png')" onmouseout="changeImage('github-icon', 'images/github-icon.png')"></a>
+          <ul class="nav-menu">
+            <li class="nav-item"><a href="index.html" class="nav-link">About Me</a></li>
+            <li class="nav-item"><a href="resume.html" class="nav-link">Resume</a></li>
+            <li class="nav-item"><a href="projects.html" class="nav-link">Projects</a></li>
+            <li class="nav-item"><a href="contact.html" class="nav-link">Contact Me</a></li>
+          </ul>
+          <div class="hamburger"><span class="bar"></span><span class="bar"></span><span class="bar"></span></div>
+        </nav>
+      </header>
+      <article class="container">
+        <h2>My Projects</h2>
+        <ul class="projects">
+          <!-- Project 1 -->
+          <li>
+            <h3 class="projectHeading">Breakout project</h3>
+            <a href="https://github.com/Orotheoreo/breakout">
+              <img src="images/Breakout.jpg" alt="Breakout Project Image">
+            </a>
+          </li>
+          <!-- Project 2 -->
+          <li>
+            <h3 class="projectHeading">Project 2</h3>
+            <a href="project2">
+              <img src="images/project2.jpg" alt="Project 2 Image">
+            </a>
+          </li>
+          <!-- Project 3 -->
+          <li>
+            <h3 class="projectHeading">Project 3</h3>
+            <a href="project3">
+              <img src="images/project3.jpg" alt="Project 3 Image">
+            </a>
+          </li>
+          <!-- Project 4 -->
+          <li>
+            <h3 class="projectHeading">Project 4</h3>
+            <a href="project4">
+              <img src="images/project4.jpg" alt="Project 4 Image">
+            </a>
+          </li>
+          <!-- Project 5 -->
+          <li>
+            <h3 class="projectHeading">Project 5</h3>
+            <a href="project5">
+              <img src="images/project5.jpg" alt="Project 5 Image">
+            </a>
+          </li>
+          <!-- Project 6 -->
+          <li>
+            <h3 class="projectHeading">Project 6</h3>
+            <a href="project6">
+              <img src="images/project6.jpg" alt="Project 6 Image">
+            </a>
+          </li>
+        </ul>
+      </article>
+    </div>
+  </body>
+</html>
