@@ -1,0 +1,471 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=PT+Serif&display=swap');
+
+/* Reset some default styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-font-smoothing: antialiased;
+    -moz-font-smoothing: antialiased;
+    -o-font-smoothing: antialiased;
+    font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+}
+
+@media only screen and (max-width: 580px) {
+    .container {
+        padding: 0 10px; /* Adjust padding for smaller screens */
+    }
+
+    .column {
+        width: 100%; /* Full width for columns on smaller screens */
+    }
+
+    .nav-menu {
+        display: none; /* Hide the navigation menu on smaller screens */
+    }
+
+    .hamburger {
+        display: block; /* Show a hamburger menu icon for mobile screens */
+    }
+
+    .navbar {
+        padding: 0.5rem; /* Adjust padding for the navigation bar on smaller screens */
+    }
+
+    .nav-item {
+        padding: 0.5rem; /* Adjust padding for navigation items on smaller screens */
+    }
+
+    .nav-link {
+        font-size: 18px; /* Adjust font size for navigation links on smaller screens */
+    }
+
+    .header {
+        padding: 1rem; /* Adjust padding for the header on smaller screens */
+    }
+}
+
+/* Additional media queries for different screen sizes can be added as needed */
+
+/* For screens with a minimum width of 768px (typical for tablets and larger screens) */
+@media (min-width: 768px) {
+    .column {
+        width: 50%; /* Divide columns into 2 columns on larger screens */
+    }
+}
+
+.sub-title {
+    position: relative;
+    top: 70px;
+    margin: 20px 20px 20px 0; /* Adjust the right margin as needed */
+    padding: 10px;
+    font-family: 'PT Serif', serif;
+    font-size: 40px;
+    color: black;
+}
+
+
+
+.intro-text {
+    /* Add your styles for the intro text */
+    position: relative;
+    font-size: 24px;
+    font-family: 'PT Serif', serif;
+    top:15px;
+    left:-0px;
+    margin: 20px 0; /* Adjust margin as needed */
+    padding: 10px;
+    color: #666; /* Adjust the color as needed */
+}
+
+.main-body {
+    font-size: 18px;
+    font-family: 'PT Serif', serif;
+    margin: 20px 0; /* Keep the top and bottom margin */
+    color: #444;
+    text-align: left;
+    float: left;
+    width: 50%; /* Adjust the width as needed */
+    max-width: 500px; /* Set a maximum width if desired */
+    box-sizing: border-box; /* Include padding and border in width calculation */
+    padding: 0 20px; /* Add padding to the left and right */
+}
+
+
+/*contact form styles*/
+.contact-me {
+    font-size: 24px;
+    margin: 10px 0 0 0;
+    color: white;
+    font-family: 'PT Serif', serif;
+}
+
+.contact-sub  {
+    font-size: 18px;
+    color: white;
+    margin: 0 0 20px 0;
+    font-family: 'PT Serif', serif;
+}
+label[for="subject"] {
+    color: white;
+}
+
+#contact-form {
+  background-color: rgba(72, 72, 72, 0.9);
+   padding: 20px;
+   max-width: 600px;
+   margin: 0 auto;
+   border-radius: 7px;
+   -webkit-border-radius: 7px;
+   -moz-border-radius: 7px;
+   position: absolute;
+   top: 50%;
+   left: 50%;
+   transform: translate(-50%, -50%);
+   z-index: 96; /* Use a lower z-index value than the navigation bar */
+}
+
+#contact-form input,
+#contact-form select,
+#contact-form textarea,
+#contact-form label {
+    font-size: 15px;
+    margin-bottom: 2px;
+    font-family: 'PT Serif', serif;
+}
+
+#contact-form input,
+#contact-form select,
+#contact-form textarea {
+    width: 100%;
+    background: #fff;
+    border: 0;
+    -moz-border-radius: 4px;
+    -webkit-border-radius: 4px;
+    border-radius: 4px;
+    margin-bottom: 25px;
+    padding: 5px;
+}
+
+#contact-form input:focus,
+#contact-form select:focus,
+#contact-form textarea:focus {
+    background-color: #E5E6E7;
+}
+
+#contact-form textarea {
+    width: 100%;
+    height: 150px;
+}
+
+#contact-form button[type="submit"] {
+    cursor: pointer;
+    width: 100%;
+    border: none;
+    background: #8fc7c5;
+    color: #FFF;
+    margin: 0 0 5px;
+    padding: 10px;
+    border-radius: 5px;
+    text-shadow:2px 2px 2px black;
+}
+
+#contact-form button[type="submit"]:hover {
+    background: #588c89;
+    -webkit-transition: background 0.3s ease-in-out;
+    -moz-transition: background 0.3s ease-in-out;
+    transition: background-color 0.3s ease-in-out;
+}
+
+#contact-form button[type="submit"]:active {
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.5);
+}
+
+
+input:required,
+textarea:required {
+    box-shadow: none;
+    -moz-box-shadow: none;
+    -webkit-box-shadow: none;
+    -o-box-shadow: none;
+}
+
+#contact-form .required {
+    font-weight: bold;
+    color: #E5E6E7;
+}
+
+/* Hide success/failure message
+   (especially since the PHP is missing) */
+#failure,
+#success {
+    color: #6EA070;
+    display: none;
+}
+
+/* Make form look nice on smaller screens */
+@media only screen and (max-width: 580px) {
+    #contact-form {
+        left: 3%;
+        margin-right: 3%;
+        width: 88%;
+        margin-left: 0;
+        padding-left: 3%;
+        padding-right: 3%;
+    }
+}
+
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px; /* Add some padding for content */
+
+}
+
+.column {
+    width: 100%;
+    padding: 10px;
+    box-sizing: border-box; /* Include padding in width calculation */
+}
+
+@media (min-width: 768px) {
+    .column {
+        width: 50%;
+    }
+}
+
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+}
+
+.nav-logo {
+    position: fixed;
+    left: 25px;
+    top: 5px;
+    width: 60px;
+    z-index: 101;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 1.5rem;
+    background-color: #8FC6C4;
+    height: 70px;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 99;
+}
+
+.hamburger {
+    display: none;
+}
+
+.nav-menu {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 1rem;
+
+}
+
+.nav-item {
+    font-family: 'Noto Sans', sans-serif;
+    text-align: center;
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
+
+.nav-link {
+    font-size: 20px;
+    font-weight: 600;
+    color: white;
+    text-shadow: 1px 1px 0px black;
+    text-decoration: none; /* Remove underline */
+}
+
+.nav-link:hover {
+    color: black;
+    text-shadow: 1px 1px 0px white;
+}
+
+
+
+.intro-text {
+    /* Add your styles for intro text */
+}
+
+.contact-background {
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+.container {
+  max-width: 980px;
+  margin: auto;
+  padding: percentage(22px/980px);
+  margin-top: 125px;
+}
+
+.projects {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.projects li {
+  width: calc(33.33% - 20px); /* Adjust the width and spacing as needed */
+  margin-bottom: 20px; /* Adjust the bottom margin as needed */
+
+}
+.projects li img {
+    border: 5px solid #90c4c4;
+}
+
+
+ a {
+   text-decoration: none;
+   color: #888;
+   display: block;
+   font-size: 16px;
+ }
+  display: inline-block;
+  vertical-align: top;
+  margin: 45px percentage(22px/980px) 0 percentage(23px/980px);
+  width: percentage(200px/980px);
+}
+
+a {
+  text-decoration: none;
+  color: #888;
+  display: block;
+  font-size: 16px;
+
+  img {
+    display: block;
+    max-width: 100%;
+    height: auto !important;
+  }
+}
+
+.project-label {
+  display: block;
+  margin: 5px 0 10px;
+}
+
+.current a {
+  color: #000;
+  &:after {
+    content: "";
+    display: table;
+    border: 10px solid;
+    border-top: none;
+    border-color: #333 transparent;
+    margin: auto;
+  }
+
+  img, .project-label {
+    @include transform(scale(1.1));
+  }
+
+  .project-label {
+    @include transform(translateY(10px));
+  }
+}
+h2{
+  font-size: 35px;
+  text-decoration: underline;
+  text-decoration: bold;
+  color
+}
+
+h3 {
+    font-size: 25px; /* Adjust the font size as needed */
+    text-decoration: underline;
+
+}
+
+
+.details {
+  font-size: 16px;
+  display: none;
+  position: absolute;
+  background: #444;
+  box-shadow: inset 0 10px 20px 5px #333;
+  color: #ddd;
+  right: percentage(22px/980px);
+  left: percentage(22px/980px);
+  padding: 20px;
+
+  img {
+    float: right;
+    margin-left: 20px;
+    width: percentage(500px/940px);
+    height: auto !important;
+  }
+
+  .text {
+    overflow: hidden;
+  }
+
+  overflow: hidden;
+}
+
+.current .details {
+  //display: block;
+}
+}
+
+@media only screen and (max-width: 735px) {
+.container {
+  padding: percentage(22px/735px);
+}
+
+.projects {
+  margin: 0 -1*percentage(22px/735px);
+  li {
+    margin: 45px percentage(22px/735px) 0 percentage(23px/735px);
+    width: percentage(200px/735px);
+  }
+}
+}
+
+@media only screen and (max-width: 490px) {
+.container {
+  padding: percentage(22px/490px);
+}
+
+.projects {
+  margin: 0 -1*percentage(22px/490px);
+  li {
+    margin: 45px percentage(22px/490px) 0 percentage(23px/490px);
+    width: percentage(200px/490px);
+  }
+
+  .details {
+    img {
+      float: none;
+      width: 100%;
+      margin: 0;
+    }
+  }
+}
+}
+
+
+/* Add more CSS rules for headings, text, images, anchors, etc. as needed */
