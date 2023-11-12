@@ -61,7 +61,7 @@
           <p id="failure" style="color: red;">Your message did not send; you made a mistake!</p>
           <p id="success" style="color: green;">Your message was sent successfully. I will get back to you as soon as possible.</p>
         </div>
-        <form id="contactForm" action="https://script.google.com/macros/s/AKfycbz8h2383-4_ssSc1i72VUxbnpW_BWurY27zpuzXV3D0A7u5HNzryaGK34HSlfZ6Lxj4/exec" method="POST">
+        <form id="contactForm" action="https://script.google.com/macros/s/AKfycbyTWdj57p2uwVlj7RaCFEv688YYY19J0yDrIMahP6JylzSRHC7Jmh_tsuIUKBtYxiaY/exec" method="POST">
           <div>
             <label for="name">
               <span class="required">name: *</span>
@@ -75,20 +75,22 @@
             </label>
           </div>
           <div>
-            <label for="subject">
-              <span>Subject: </span>
-              <input type="text" id="subject" name="subject" value="" placeholder="subject" tabindex="3" />
-            </label>
-          </div>
-          <div>
-            <label for="message">
-              <span class="required">Message: *</span>
-              <textarea id="message" name="message" placeholder="Please write your message here." tabindex="4" required="required"></textarea>
-            </label>
-          </div>
-          <div>
-            <button name="submit" type="submit" id="submit">SEND</button>
-          </div>
+  <label for="subject">
+    <span>Subject: </span>
+    <input type="text" id="subjectField" name="subject" value="" placeholder="subject" tabindex="3" />
+  </label>
+</div>
+
+<div>
+  <label for="message">
+    <span class="required">Message: *</span>
+    <textarea id="message" name="message" placeholder="Please write your message here." tabindex="4" required="required"></textarea>
+  </label>
+</div>
+
+<div>
+  <button name="submit" type="submit" id="submit">SEND</button>
+</div>
         </form>
       </div>
     </div>
@@ -96,7 +98,7 @@
       document.getElementById('contactForm').addEventListener('submit', function(event) {
         event.preventDefault(); // Prevent the default form submission behavior
         var formData = new FormData(this);
-        fetch('https://script.google.com/macros/s/AKfycbxpHCzpm_kESYAxDfpI2HNsAIjN1MShe7xsF3fdbvY3-9EwNXp0hlDHICOcVyrsN7r7/exec', {
+        fetch('https://script.google.com/macros/s/AKfycbyTWdj57p2uwVlj7RaCFEv688YYY19J0yDrIMahP6JylzSRHC7Jmh_tsuIUKBtYxiaY/exec', {
             method: 'POST',
             body: formData,
           }).then(response => response.text()) // Read response as plain text
@@ -104,15 +106,21 @@
             // Debugging: Check the actual response from the server
             console.log('Response from server:', data);
             // Handle the response from the server
-            if (data.startsWith('Success')) { // Check if the response starts with 'Success'
-              document.getElementById('success').style.display = 'block';
-              document.getElementById('failure').style.display = 'none';
-            } else {
-              document.getElementById('success').style.display = 'none';
-              document.getElementById('failure').style.display = 'block';
-              // Debugging: Display the error message in the console
-              console.error('Error message from server:', data);
-            }
+            try {
+    const response = JSON.parse(data);
+    if (response.status === 'success') {
+        document.getElementById('success').style.display = 'block';
+        document.getElementById('failure').style.display = 'none';
+    } else {
+        document.getElementById('success').style.display = 'none';
+        document.getElementById('failure').style.display = 'block';
+        console.error('Error message from server:', response.message);
+    }
+} catch (error) {
+    console.error('Error parsing JSON:', error);
+    document.getElementById('success').style.display = 'none';
+    document.getElementById('failure').style.display = 'block';
+}
           }).catch(error => {
             console.error('Error:', error);
             document.getElementById('success').style.display = 'none';
